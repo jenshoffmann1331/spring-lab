@@ -17,6 +17,7 @@ jobs:
       matrix:
         project:
           - 01-rest-service
+          - 02-scheduling-task
 
     defaults:
       run:
