@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         project:
-          - 01-hello-boot
+          - 01-rest-service
 
     defaults:
       run:
