@@ -11,8 +11,8 @@
 	<groupId>com.example</groupId>
 	<artifactId>quickstart</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>01-hello-boot</name>
+	<description>01-hello-boot</description>
 	<url/>
 	<licenses>
 		<license/>
