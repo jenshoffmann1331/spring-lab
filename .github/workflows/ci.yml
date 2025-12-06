@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - feature/**
+      - bugfix/**
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        project:
+          - 01-hello-boot
+
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Build & test with Maven
+        run: mvn -B clean verify
+
+      - name: Generate SBOM (CycloneDX)
+        run: mvn -B -DskipTests cyclonedx:makeAggregateBom
+
+      - name: Upload SBOM
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-${{ matrix.project }}
+          path: |
+            ${{ matrix.project }}/target/bom.json
+            ${{ matrix.project }}/target/bom.xml
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports-${{ matrix.project }}
+          path: ${{ matrix.project }}/target/surefire-reports
+
+      - name: Upload application JAR
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-jar-${{ matrix.project }}
+          path: ${{ matrix.project }}/target/*.jar
