@@ -17,3 +17,18 @@ spring init \
   --dependencies=jdbc \
   ${NAME}
 ```
+
+```
+TITLE=interview-guide
+NAME=${TITLE}
+SHORT_NAME=interview
+spring init \
+  --name=${NAME} \
+  --artifactId=${TITLE} \
+  --groupId=com.example \
+  --packageName=com.example.${SHORT_NAME} \
+  --build=maven \
+  --language=java \
+  --dependencies=jdbc \
+  ${NAME}
+```
