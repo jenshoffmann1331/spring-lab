@@ -19,6 +19,7 @@ jobs:
           - 01-rest-service
           - 02-scheduling-task
           - 03-consuming-rest-service
+          - 04-relational-data-access
 
     defaults:
       run:

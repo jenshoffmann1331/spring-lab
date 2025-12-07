@@ -3,13 +3,17 @@
 To create a new Spring sample project
 
 ```
+NUMBER=04
+TITLE=relational-data-access
+NAME=${NUMBER}-${TITLE}
+SHORT_NAME=relational
 spring init \
-  --name=01-rest-service \
-  --artifactId=rest-service \
+  --name=${NAME} \
+  --artifactId=${TITLE} \
   --groupId=com.example \
-  --packageName=com.example.restservice \
+  --packageName=com.example.${SHORT_NAME} \
   --build=maven \
   --language=java \
-  --dependencies=web \
-  01-rest-service
+  --dependencies=jdbc \
+  ${NAME}
 ```
