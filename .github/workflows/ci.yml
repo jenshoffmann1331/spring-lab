@@ -20,6 +20,7 @@ jobs:
           - 02-scheduling-task
           - 03-consuming-rest-service
           - 04-relational-data-access
+          - 05-uploading-files
 
     defaults:
       run:

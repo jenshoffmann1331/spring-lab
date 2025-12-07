@@ -3,10 +3,10 @@
 To create a new Spring sample project
 
 ```
-NUMBER=04
-TITLE=relational-data-access
+NUMBER=05
+TITLE=uploading-files
 NAME=${NUMBER}-${TITLE}
-SHORT_NAME=relational
+SHORT_NAME=files
 spring init \
   --name=${NAME} \
   --artifactId=${TITLE} \
