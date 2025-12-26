@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: order_postgres
+    environment:
+      POSTGRES_DB: orderdb
+      POSTGRES_USER: order
+      POSTGRES_PASSWORD: order
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "order"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - type: tmpfs
+        target: /var/lib/postgresql/data
