@@ -10,10 +10,10 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>org.example</groupId>
-  <artifactId>07-spring-kafka</artifactId>
+  <artifactId>order-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>07-spring-kafka</name>
-  <description>07-spring-kafka</description>
+  <name>07-order-service</name>
+  <description>07-order-service</description>
   <url/>
   <licenses>
     <license/>
@@ -41,22 +41,6 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-
-    <dependency>
-      <groupId>org.springframework.kafka</groupId>
-      <artifactId>spring-kafka</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-
   </dependencies>
 
   <build>
